@@ -1,4 +1,3 @@
-import Typewriter from "typewriter-effect/dist/core";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
