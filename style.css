@@ -1,0 +1,397 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Ubuntu:wght@300&display=swap");
+
+/* Light theme color palette: to be implemented */
+/* font-family: "Poppins", sans-serif; */
+:root {
+  --text: #f0e9e9;
+  --alt-text: #ada8a8;
+  --background: #0f0f0f;
+  --primary: #881717;
+  --secondary: #991212;
+  --accent: #f72d2d;
+
+  letter-spacing: 0.03rem;
+  --gradient-start: rgb(131, 83, 241);
+  font-family: "Poppins", sans-serif;
+
+  margin: 0px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, p {
+  cursor: default;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--background);
+}
+
+main {
+  min-height: 100%;
+  --cursorXPos: 50vw;
+  --cursorYPos: 50vw;
+}
+
+@media (min-width: 768px) {
+  main::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: radial-gradient(
+      circle 7.5rem at var(--cursorXPos) var(--cursorYPos),
+      rgba(255, 255, 255, 0.06) 0%,
+      rgba(255, 255, 255, 0.005) 100%
+    );
+    z-index: -1;
+  }
+} 
+
+a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+header {
+  font-weight: bold;
+  z-index: 2;
+}
+
+@media (max-width: 475px) {
+  body {
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+ 
+.appear {
+  transition: all 0.8s;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.appear.inview {
+  opacity: 1;
+  transform: none;
+  transition-delay: 0.3s;
+}
+
+.gradient-rounded-border {
+  border-radius: 10px;
+  border: 5px solid transparent;
+  background:
+    linear-gradient(var(--secondary) 0%, var(--secondary) 100%) padding-box,
+    linear-gradient(to top, rgb(204, 85, 85), rgb(255, 120, 120)) border-box;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+}
+
+.main-section {
+  margin-left: 120px;
+  margin-right: 120px;
+  max-width: 100vw;
+}
+
+@media (max-width: 475px) {
+  .main-section {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+body nav {
+  height: 3.5rem;
+  width: 100%;
+  background-color: var(--primary);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* begin nav-bar styles */
+#logo-div {
+  display: flex;
+  align-items: center;
+}
+
+#logo-div > a {
+  font-size: 2rem;
+}
+
+#nav-list-container {
+  opacity: 1;
+  width: 25rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: 100;
+}
+
+.page-link {
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 0.7rem;
+  transition-property: background-color;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+
+.page-link:hover {
+  background-color: var(--accent);
+}
+
+#svg-list-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-link-svg:hover {
+  filter: none;
+  transition-property: filter;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
+  transition-delay: 0s;
+}
+
+.social-link-svg:hover {
+  filter: invert(1);
+}
+
+#github-svg-li {
+  display: flex;
+  align-items: center;
+}
+
+#github-svg {
+  width: 1.5625rem;
+  height: 1.5625rem;
+}
+
+#linkedin-svg {
+  width: 2rem;
+}
+
+@media (max-width: 640px) {
+  body #main-nav {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+}
+
+/* Hero section styles */
+#hero-section {
+  height: 80vmin;
+  color: var(--text);
+  margin-bottom: 5rem;
+  padding-top: 5rem;
+  text-align: center;
+}
+
+#hero-section h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 475px) {
+  #main-text-container {
+    max-width: 100%;
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 640px) {
+  #main-text-container {
+    max-width: 100%;
+    padding: 10rem;
+  }
+}
+
+/* About section styles */
+#about-section {
+  color: var(--alt-text);
+}
+
+#about-section > h1 {
+  font-size: 2rem;
+  padding: 16px;
+}
+
+#about-section > p {
+  padding: 16px;
+  line-height: 175%;
+}
+
+#about-section a {
+  cursor: pointer;
+}
+
+#about-section span {
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* Footer style */
+.footer-container {
+  box-sizing: border-box;
+  margin-top: 7.5rem;
+  min-height: 15vh;
+}
+
+.footer-container > .footer-line {
+  border: 1px solid var(--accent);
+}
+
+.footer-container > #footer {
+  color: var(--text);
+  opacity: 0.7;
+}
+
+#footer > .build-info {
+  box-sizing: border-box;
+  padding: 1.5rem;
+}
+
+/* Gallery styles */
+.gallery {
+  position: relative;
+  width: 100%;
+  display: flex;
+  color: var(--text);
+  padding: 5em 2em;
+  z-index: 1;
+}
+
+.minimap {
+  flex: 1;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  padding: 2em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.images {
+  flex: 3;
+  position: relative;
+  top: 0;
+}
+
+.img {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  margin: 50px auto;
+}
+
+
+@media (max-width: 720px) {
+  .img {
+    width: 52vmin;
+    height: 30vmin; 
+  }
+}
+
+@media (min-width: 721px) {
+  .img {
+    width: 84vmin;
+    height: 58vmin;
+  }
+}
+
+.img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  /* Hover blur effect styles */
+  filter: blur(0);
+  transform: scale(1);
+  transition: filter 0.3s ease-in-out, transform 0.3s ease-in;
+}
+
+.blurb-container {
+  position: absolute;
+  padding: 16px;
+  bottom: 0%;
+  background: var(--primary);
+  display: flex;
+
+  /* Hover animation styles */
+  height: 0;
+  width: 100%; /* i have fuckin clue what is going on here with the widths but whatever maybe u can fix it later */
+  transition: height 0.3s ease-in-out;
+}
+
+.img:hover img {
+  filter: blur(4px);
+  transform: scale(1.1);
+}
+
+.img:hover .blurb-container {
+  height: 45%;
+}
+
+.blurb-container > p {
+  flex: 3;
+
+  color: var(--alt-text);
+}
+
+.tech-container {
+  flex: 1;
+}
+
+.preview > .img-thumbnail > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-thumbnail {
+  position: relative;
+  width: 9vmin;
+  height: 12vmin;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+.left-image {
+  object-position: left;
+}
+
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-list > li {
+  width: fit-content;
+  height: fit-content;
+  border: 1.5px solid var(--accent);
+  border-radius: 9999px;
+  text-align: center;
+  padding: 6px;
+  font-size: 0.75rem;
+  cursor: default;
+  background-color: var(--background);
+}
+
+.blurb-container a {
+  font-size: 2rem;
+}
+

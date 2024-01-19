@@ -1,0 +1,23 @@
+{
+  "name": "oh-portfolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "prettier": "prettier --write \"src/**/*.js\" \"index.html\" \"assets/*.json\" --config \".prettierrc.json\""
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3",
+    "typescript": "^5.3.3",
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@studio-freight/lenis": "^1.0.25",
+    "gsap": "^3.12.4",
+    "three": "^0.156.1",
+    "typewriter-effect": "^2.21.0"
+  }
+}

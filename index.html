@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Oh My Portfolio</title>
+  </head>
+  <body>
+    <main>
+      <header>
+        <nav>
+          <div id="logo-div" class="nav-root-component">
+            <a href="#">Oh(N)</a>
+          </div>
+          <ul id="nav-list-container">
+            <li><a href="#gallery-section" class="page-link">Projects</a></li>
+            <li><a href="#about-section" class="page-link">About</a></li>
+          </ul>
+          <ul id="svg-list-container">
+            <li id="github-svg-li">
+              <a
+                id="github-svg-anchor"
+                href="https://github.com/bathan1"
+                target="_blank"
+                ><img
+                  id="github-svg"
+                  class="social-link-svg"
+                  src="./assets/svgs/github-mark-white.svg"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/nathan-oh-a90b19232/"
+                target="_blank"
+                ><img
+                  id="linkedin-svg"
+                  class="social-link-svg"
+                  src="./assets/svgs/linkedin.svg"
+              /></a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="hero-section" class="main-section">
+        <div id="main-text-container">
+          <h1>Hi, I'm Nathan, and I like to make things on my computer.</h1>
+        </div>
+      </section>
+
+      <section id="gallery-section" class="main-section">
+        <div class="gallery">
+          <div class="images">
+            <div class="img">
+              <img src="img1.png" alt="">
+            </div>
+            <div class="img">
+              <img src="img2.png" alt="">
+            </div>
+            <div class="img">
+              <img src="img3.png" alt="">
+            </div>
+            <div class="img">
+              <img src="img4.png" alt="">
+            </div>
+            <div class="img">
+              <img src="img5.png" alt="">
+            </div>
+            <div class="img">
+              <img src="img6.png" alt="">
+            </div>
+            <div class="img">
+              <img src="img7.png" alt="">
+            </div>
+          </div>
+          <div class="minimap">
+            <div class="preview"></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about-section" class="appear">
+        <h1>About</h1>
+        <p>
+          I am a junior studying Computer Science at Johns Hopkins University, and I'm pretty good at telling computers what to do (see my <a href="resume.pdf" download="nathanohResume.pdf">resume</a>). Besides programming, you might catch me snowboarding, attending raves, or watching sports or anime with my dog. If you want a website or need a really good programmer, shoot me an email me at <span id="contact-anchor">side_nathan@hotmail.com</span>.
+        </p>
+      </section>
+
+      <div class="footer-container">
+        <div class="footer-line"></div>
+        <footer id="footer">
+          <div class="build-info">
+            <p>
+              This site was written with pure HTML, CSS, and TypeScript. Bundled with Vite and hosted on GitHub pages, by yours truly.
+              <br>
+            </p>
+          </div>
+        </footer>
+      </div>
+    </main>
+
+  </body>
+  <script defer src="./src/main.ts" type="module"></script>
+</html>
