@@ -190,7 +190,7 @@ body nav {
 
 /* Hero section styles */
 #hero-section {
-  height: 80vmin;
+  height: 35vmin;
   color: var(--text);
   margin-bottom: 5rem;
   padding-top: 5rem;

@@ -2,42 +2,45 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const blurbs = {
-  1: `<a target="_blank" href="https://bio-match.onrender.com/">BioMatch:</a> <br/> a clinical trials app that can be scaled to uniquely match hundreds of users to volunteer for a clinical trial.`,
-  2: `<a target="_blank" href="https://cs280fa23-coursework.github.io/homework-3-manga-cover-creation-app-bathan1/">MangaCoverer:</a> <br/> a full-stack project used to help over 20 students at the UVA art club for inspiration on their manga project.`,
-  3: `<a href="https://cs280fa23-coursework.github.io/homework-4-piano-app-bathan1/">Mini-Piano:</a> <br/> a satisfying full-octave piano playable on the browser!`,
-  4: `<a href="https://cs280fa23-coursework.github.io/homework-1-manga-cover-creation-app-bathan1/">SleepTimerer:</a> <br/> a mobile-first sleep calculator used to help me figure out when to sleep.`,
-  5: `<a href="https://cs280fa23-coursework.github.io/homework-2-stickynotes-app-bathan1/">StickyNoter:</a> <br/> a sticky notes app made for intro full-stack development at JHU.`,
-  6: `<a href="#">Flashcarder:</a> <br/> a flash cards app used to help me and my friends study for our finals`,
-  7: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
+  1: `<a>Solution-Blitz:</a> <br/> Leetcode on VSCode! But with a competitive programming twist :). Built for my Object-Oriented-Software-Engineering (OOSE) course with a team of 5.`,
+  2: `<a>HopEats</a> <br/> An Android app that finds Hopkins students nearby restaurants along with a fully-featured rating system that brings a social presence to the app! Built for my User-Interfaces-and-Mobile-Applications course with a team of 4.`,
+  3: `<a>ValueStacker</a> <br/> A Redis-esque key-value pair store meant to work in a concurrent environment using mutexes to manage concurrent client connections to the server. Built for my Computer Systems Fundamentals course.`,
+  4: `<a>QYay!</a> <br/> A Kahoot-like clone app made using Websockets to handle realtime client-server communications. Built for my OOSE course.`,
+  5: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
 };
 
 const techs = {
   1: `
     <ul class="tech-list">
-      <li>React</li> 
+      <li>VSCode API</li> 
       <li>MongoDB</li> 
       <li>Express</li> 
-      <li>Tailwind</li> 
+      <li>Redis</li> 
+      <li>GCP Serverless Functions</li> 
   </ul>`,
   2: `
     <ul class="tech-list">
-      <li>HTML</li> 
-      <li>Tailwind</li> 
-      <li>JavaScript</li> 
+      <li>Java</li> 
+      <li>Android Studio</li> 
+      <li>Firebase</li> 
     </ul>
   `,
   3: `
     <ul class="tech-list">
-      <li>HTML</li>
-      <li>Tailwind</li>
-      <li>TypeScript</li>
+      <li>C++</li>
+      <li>C</li>
     </ul>
   `,
   4: `
     <ul class="tech-list">
       <li>HTML</li>
       <li>Tailwind</li>
-      <li>JavaScript</li>
+      <li>TypeScript</li>
+      <li>React</li>
+      <li>Express</li>
+      <li>Redux</li>
+      <li>Prisma</li>
+      <li>Websockets</li>
     </ul>
   `,
   5: `
@@ -47,23 +50,7 @@ const techs = {
       <li>JavaScript</li>
     </ul>
   `,
-  6: `
-    <ul class="tech-list">
-      <li>React</li>
-      <li>Tailwind</li>
-      <li>Zustand</li>
-      <li>PostgreSQL</li>
-      <li>NestJS</li>
-    </ul>
-  `,
-  7: `
-    <ul class="tech-list">
-      <li>HTML</li>
-      <li>CSS</li>
-      <li>JavaScript</li>
-    </ul>
-  `,
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   /**
@@ -87,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 768) {
     document.addEventListener('mousemove', trackMouse);
   }
-    const numImages = 7;
+    const numImages = 5;
     const minimap = document.querySelector(".minimap .preview");
     const imageContainer = document.querySelector(".images");
 
