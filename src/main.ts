@@ -39,6 +39,7 @@ const techs = {
       <li>React</li>
       <li>Express</li>
       <li>Redux</li>
+      <li>PostgreSQL</li>
       <li>Prisma</li>
       <li>Websockets</li>
     </ul>
