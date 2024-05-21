@@ -3,10 +3,11 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const blurbs = {
   1: `<a>Solution-Blitz:</a> <br/> Leetcode on VSCode! But with a competitive programming twist :). Built for my Object-Oriented-Software-Engineering (OOSE) course with a team of 5.`,
-  2: `<a>HopEats</a> <br/> An Android app that finds Hopkins students nearby restaurants along with a fully-featured rating system that brings a social presence to the app! Built for my User-Interfaces-and-Mobile-Applications course with a team of 4.`,
-  3: `<a>ValueStacker</a> <br/> A Redis-esque key-value pair store meant to work in a concurrent environment using mutexes to manage concurrent client connections to the server. Built for my Computer Systems Fundamentals course.`,
-  4: `<a>QYay!</a> <br/> A Kahoot-like clone app made using Websockets to handle realtime client-server communications. Built for my OOSE course.`,
-  5: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
+  2: `<a href="https://ibft-catpics-8bd7cc324d04.herokuapp.com">IBFT Simulation</a> <br/> Simulate one round of the Istanbul Byzantine Fault Tolerance consensus algorithm used on many blockchains. Built with C++ nodejs bindings to handle multithreading and with React to display the results.`,
+  3: `<a>HopEats</a> <br/> An Android app that finds Hopkins students nearby restaurants along with a fully-featured rating system that brings a social presence to the app! Built for my User-Interfaces-and-Mobile-Applications course with a team of 4.`,
+  4: `<a>ValueStacker</a> <br/> A Redis-esque key-value pair store meant to work in a concurrent environment using mutexes to manage concurrent client connections to the server. Built for my Computer Systems Fundamentals course.`,
+  5: `<a>QYay!</a> <br/> A Kahoot-like clone app made using Websockets to handle realtime client-server communications. Built for my OOSE course.`,
+  6: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
 };
 
 const techs = {
@@ -20,18 +21,25 @@ const techs = {
   </ul>`,
   2: `
     <ul class="tech-list">
+      <li>C++</li> 
+      <li>Express</li> 
+      <li>React</li> 
+    </ul>
+  `,
+  3: `
+    <ul class="tech-list">
       <li>Java</li> 
       <li>Android Studio</li> 
       <li>Firebase</li> 
     </ul>
   `,
-  3: `
+  4: `
     <ul class="tech-list">
       <li>C++</li>
       <li>C</li>
     </ul>
   `,
-  4: `
+  5: `
     <ul class="tech-list">
       <li>HTML</li>
       <li>Tailwind</li>
@@ -44,7 +52,7 @@ const techs = {
       <li>Websockets</li>
     </ul>
   `,
-  5: `
+  6: `
     <ul class="tech-list">
       <li>HTML</li>
       <li>Tailwind</li>
@@ -75,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 768) {
     document.addEventListener('mousemove', trackMouse);
   }
-    const numImages = 5;
+    const numImages = 6;
     const minimap = document.querySelector(".minimap .preview");
     const imageContainer = document.querySelector(".images");
 
@@ -121,12 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const imgFull = document.createElement("img");
     imgFull.src = imagePath;
-
-    // Need BioMatch image to start from left
-    if (i === 1) {
-      imgThumbnail.classList.add("left-image");
-      imgFull.classList.add("left-image");
-    }
 
     blurbContainer.appendChild(blurb);
     blurbContainer.appendChild(techDiv);
