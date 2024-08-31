@@ -25,9 +25,9 @@ jobs:
         id: detect-package-manager
         run: |
           if [ -f "${{ github.workspace }}/pnpm-lock.yaml" ]; then
-            echo "::set-output name=manager::pnpm"
-            echo "::set-output name=command::install"
-            echo "::set-output name=runner::pnpx --no-install"
+            echo "manager=pnpm" >> $GITHUB_ENV
+            echo "command=install" >> $GITHUB_ENV
+            echo "runner=pnpx" >> $GITHUB_ENV
             exit 0
           elif [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "::set-output name=manager::yarn"
