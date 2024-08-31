@@ -66,65 +66,6 @@ const projects = [
   }
 ];
 
-const blurbs = {
-  0:  `<a>PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API.`,
-  1: `<a>Solution-Blitz:</a> <br/> Leetcode on VSCode! But with a competitive programming twist :). Built for my Object-Oriented-Software-Engineering course with a team of 5.`,
-  2: `<a href="https://ibft-catpics-8bd7cc324d04.herokuapp.com">IBFT Simulation</a> <br/> Simulate one round of the Istanbul Byzantine Fault Tolerance consensus algorithm used on many blockchains. Built with C++ nodejs bindings to handle multithreading and with React to display the results.`,
-  3: `<a>HopEats</a> <br/> An Android app that finds Hopkins students nearby restaurants along with a fully-featured rating system that brings a social presence to the app! Built for my User-Interfaces-and-Mobile-Applications course with a team of 4.`,
-  4: `<a>ValueStacker</a> <br/> A Redis-esque key-value pair store meant to work in a concurrent environment using mutexes to manage concurrent client connections to the server. Built for my Computer Systems Fundamentals course.`,
-  5: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
-};
-
-const techs = {
-  1: `
-    <ul class="tech-list">
-      <li>VSCode API</li> 
-      <li>MongoDB</li> 
-      <li>Express</li> 
-      <li>Redis</li> 
-  </ul>`,
-  2: `
-    <ul class="tech-list">
-      <li>C++</li> 
-      <li>Express</li> 
-      <li>React</li> 
-    </ul>
-  `,
-  3: `
-    <ul class="tech-list">
-      <li>Java</li> 
-      <li>Android Studio</li> 
-      <li>Firebase</li> 
-    </ul>
-  `,
-  4: `
-    <ul class="tech-list">
-      <li>C++</li>
-      <li>C</li>
-    </ul>
-  `,
-  5: `
-    <ul class="tech-list">
-      <li>HTML</li>
-      <li>Tailwind</li>
-      <li>TypeScript</li>
-      <li>React</li>
-      <li>Express</li>
-      <li>Redux</li>
-      <li>PostgreSQL</li>
-      <li>Prisma</li>
-      <li>Websockets</li>
-    </ul>
-  `,
-  6: `
-    <ul class="tech-list">
-      <li>HTML</li>
-      <li>Tailwind</li>
-      <li>JavaScript</li>
-    </ul>
-  `,
-};
-
 document.addEventListener("DOMContentLoaded", () => {
   /**
     * Used to update the CSS variables in realtime for the flashlight effect
