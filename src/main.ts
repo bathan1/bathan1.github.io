@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const projects = [
   {
-    blurb: `<a href="https://pds-dase-portal-v2.fly.dev/">PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API. Contracted work to overhaul their legacy portal site.`,
+    blurb: `<a href="https://pds-dase-portal-v2.fly.dev/" target="_blank">PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API. Contracted work to overhaul their legacy portal site.`,
     tech: `<ul class="tech-list">
       <li>NextJS</li>
       <li>Redis</li>
@@ -22,7 +22,7 @@ const projects = [
     imgSrc: "./solblitz.png"
   },
   {
-    blurb: `<a href="https://ibft-catpics-8bd7cc324d04.herokuapp.com">IBFT Simulation</a> <br/> Simulate one round of the Istanbul Byzantine Fault Tolerance consensus algorithm used on many blockchains with NodeJS + C++.`,
+    blurb: `<a href="https://ibft-catpics-8bd7cc324d04.herokuapp.com" target="_blank">IBFT Simulation</a> <br/> Simulate one round of the Istanbul Byzantine Fault Tolerance consensus algorithm used on many blockchains with NodeJS + C++.`,
     tech: `
     <ul class="tech-list">
       <li>C++</li> 
@@ -54,7 +54,7 @@ const projects = [
     imgSrc: "./value-stacker.png"
   },
   {
-    blurb: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`,
+    blurb: `<a href="https://bathan1.github.io/dad-and-jane/" target="_blank">Present-er: </a> <br/> a present for my dad and mom.`,
     imgSrc: "./presenter.png",
     tech: `
       <ul class="tech-list">
