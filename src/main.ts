@@ -3,7 +3,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const projects = [
   {
-    blurb: `<a href="https://pds-dase-portal-v2.fly.dev/">PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API.`,
+    blurb: `<a href="https://pds-dase-portal-v2.fly.dev/">PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API. Contracted work to overhaul their legacy portal site.`,
     tech: `<ul class="tech-list">
       <li>NextJS</li>
       <li>Redis</li>
