@@ -219,6 +219,9 @@ body nav {
 /* About section styles */
 #about-section {
   color: var(--alt-text);
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #about-section > h1 {

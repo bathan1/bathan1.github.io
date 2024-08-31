@@ -1,13 +1,78 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+const projects = [
+  {
+    blurb: `<a href="https://pds-dase-portal-v2.fly.dev/">PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API.`,
+    tech: `<ul class="tech-list">
+      <li>NextJS</li>
+      <li>Redis</li>
+    </ul>`,
+    imgSrc: "./pds-dase-portal-v2.png"
+  },
+  {
+    blurb: `<a>Solution-Blitz:</a> <br/> Leetcode on VSCode with a competitive programming twist! Built for a school project with a team of 5.`,
+    tech: `
+    <ul class="tech-list">
+      <li>VSCode API</li> 
+      <li>MongoDB</li> 
+      <li>Express</li> 
+      <li>Redis</li> 
+    </ul>`,
+    imgSrc: "./solblitz.png"
+  },
+  {
+    blurb: `<a href="https://ibft-catpics-8bd7cc324d04.herokuapp.com">IBFT Simulation</a> <br/> Simulate one round of the Istanbul Byzantine Fault Tolerance consensus algorithm used on many blockchains with NodeJS + C++.`,
+    tech: `
+    <ul class="tech-list">
+      <li>C++</li> 
+      <li>Express</li> 
+      <li>React</li> 
+    </ul>
+  `,
+    imgSrc: "./ibft.png"
+  },
+  {
+    blurb: `<a>HopEats</a> <br/> An Android app that finds Hopkins students nearby restaurants along with a fully-featured rating system that brings a social presence to the app! Built for my User-Interfaces-and-Mobile-Applications course with a team of 4.`,
+    tech: `
+    <ul class="tech-list">
+      <li>Java</li> 
+      <li>Android Studio</li> 
+      <li>Firebase</li> 
+    </ul>
+  `,
+    imgSrc: "./hopeats.png"
+  },
+  {
+    blurb: `<a>ValueStacker</a> <br/> A Redis-esque key-value pair store meant to work in a concurrent environment using mutexes to manage concurrent client connections to the server. Built for my Computer Systems Fundamentals course.`,
+    tech: `
+    <ul class="tech-list">
+      <li>C</li>
+      <li>C++</li>
+    </ul>
+  `,
+    imgSrc: "./value-stacker.png"
+  },
+  {
+    blurb: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`,
+    imgSrc: "./presenter.png",
+    tech: `
+      <ul class="tech-list">
+        <li>HTML</li>
+        <li>Tailwind</li>
+        <li>JavaScript</li>
+      </ul>
+    `,
+  }
+];
+
 const blurbs = {
-  1: `<a>Solution-Blitz:</a> <br/> Leetcode on VSCode! But with a competitive programming twist :). Built for my Object-Oriented-Software-Engineering (OOSE) course with a team of 5.`,
+  0:  `<a>PDS Developer Portal: </a> <br/> Suite of developer tools on the browser for interacting with the Personal-Digital-Space REST API.`,
+  1: `<a>Solution-Blitz:</a> <br/> Leetcode on VSCode! But with a competitive programming twist :). Built for my Object-Oriented-Software-Engineering course with a team of 5.`,
   2: `<a href="https://ibft-catpics-8bd7cc324d04.herokuapp.com">IBFT Simulation</a> <br/> Simulate one round of the Istanbul Byzantine Fault Tolerance consensus algorithm used on many blockchains. Built with C++ nodejs bindings to handle multithreading and with React to display the results.`,
   3: `<a>HopEats</a> <br/> An Android app that finds Hopkins students nearby restaurants along with a fully-featured rating system that brings a social presence to the app! Built for my User-Interfaces-and-Mobile-Applications course with a team of 4.`,
   4: `<a>ValueStacker</a> <br/> A Redis-esque key-value pair store meant to work in a concurrent environment using mutexes to manage concurrent client connections to the server. Built for my Computer Systems Fundamentals course.`,
-  5: `<a>QYay!</a> <br/> A Kahoot-like clone app made using Websockets to handle realtime client-server communications. Built for my OOSE course.`,
-  6: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
+  5: `<a href="https://bathan1.github.io/dad-and-jane/">Present-er: </a> <br/> a present for my dad and mom.`
 };
 
 const techs = {
@@ -17,7 +82,6 @@ const techs = {
       <li>MongoDB</li> 
       <li>Express</li> 
       <li>Redis</li> 
-      <li>GCP Serverless Functions</li> 
   </ul>`,
   2: `
     <ul class="tech-list">
@@ -97,13 +161,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeThumbnail: null | HTMLDivElement = null;
 
-  for (let i = 1; i <= numImages; i++) {
-    const randomLeft = getRandomLeft();
-    const imagePath = `./img${i}.png`;
+  for (let i = 0; i < projects.length; i++) {
+    const project = projects[i];
+    const imagePath = project.imgSrc;
 
     const thumbnailDiv = document.createElement("div");
     thumbnailDiv.className = "img-thumbnail";
-    thumbnailDiv.style.left = randomLeft;
+    thumbnailDiv.style.left = getRandomLeft();
     const imgThumbnail = document.createElement("img");
     imgThumbnail.src = imagePath;
     thumbnailDiv.appendChild(imgThumbnail);
@@ -117,15 +181,11 @@ document.addEventListener("DOMContentLoaded", () => {
     blurbContainer.className = "blurb-container";
 
     const blurb = document.createElement("p");
-    if (blurbs[i]) {
-      blurb.innerHTML = blurbs[i];
-    } 
+    blurb.innerHTML = project.blurb;
 
     const techDiv = document.createElement("div");
     techDiv.className = "tech-container";
-    if (techs[i]) {
-      techDiv.innerHTML = techs[i];
-    }
+    techDiv.innerHTML = project.tech;
 
     const imgFull = document.createElement("img");
     imgFull.src = imagePath;
@@ -159,11 +219,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const animateThumbnail = (thumbnail: HTMLDivElement, isActive: boolean) => {
     gsap.to(thumbnail, {
-    border: isActive ? "1px solid #fff" : "none",
-    opacity: isActive ? 1 : 0.5,
-    scale: isActive ? 1.3 : 1,
-    zIndex: isActive ? 10000 : 1,
-    duration: 0.3
+      border: isActive ? "1px solid #fff" : "none",
+      opacity: isActive ? 1 : 0.5,
+      scale: isActive ? 1.3 : 1,
+      zIndex: isActive ? 10000 : 1,
+      duration: 0.3
     });
   }
 
