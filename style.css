@@ -398,3 +398,16 @@ body nav {
   font-size: 2rem;
 }
 
+.about {
+  margin-left: 16px;
+  margin-right: 16px;
+  font-size: 1.2rem;
+}
+
+em {
+  font-style: italic;
+}
+
+strong {
+  font-weight: bold;
+}

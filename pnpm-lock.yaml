@@ -11,6 +11,12 @@ importers:
       '@studio-freight/lenis':
         specifier: ^1.0.25
         version: 1.0.25
+<<<<<<< HEAD
+=======
+      effect:
+        specifier: ^3.12.0
+        version: 3.12.0
+>>>>>>> 810f440 (update projects)
       gsap:
         specifier: ^3.12.4
         version: 3.12.4
@@ -162,11 +168,24 @@ packages:
   '@studio-freight/lenis@1.0.25':
     resolution: {integrity: sha512-O/yBzy+SEMbp+x/isXm5CqFsGUbazwOKTGeMo5tZCHgTEUINxndttTI/90jgysXNRx0f+QDJBKaBTdx40KBF7w==}
 
+<<<<<<< HEAD
+=======
+  effect@3.12.0:
+    resolution: {integrity: sha512-b/u9s3b9HfTo0qygVouegP0hkbiuxRIeaCe1ppf8P88hPyl6lKCbErtn7Az4jG7LuU7f0Wgm4c8WXbMcL2j8+g==}
+
+>>>>>>> 810f440 (update projects)
   esbuild@0.18.20:
     resolution: {integrity: sha512-ceqxoedUrcayh7Y7ZX6NdbbDzGROiyVBgC4PriJThBKSVPWnnFHZAkfI1lJT8QFkOwH4qOS2SJkS4wvpGl8BpA==}
     engines: {node: '>=12'}
     hasBin: true
 
+<<<<<<< HEAD
+=======
+  fast-check@3.23.2:
+    resolution: {integrity: sha512-h5+1OzzfCC3Ef7VbtKdcv7zsstUQwUDlYpUTvjeUsJAssPgLn7QzbboPtL5ro04Mq0rPOsMzl7q5hIbRs2wD1A==}
+    engines: {node: '>=8.0.0'}
+
+>>>>>>> 810f440 (update projects)
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
@@ -192,6 +211,12 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+<<<<<<< HEAD
+=======
+  pure-rand@6.1.0:
+    resolution: {integrity: sha512-bVWawvoZoBYpp6yIoQtQXHZjmz35RSVHnUOTefl8Vcjr8snTPY1wnpSPMWekcFwbxI6gtmT7rSYPFvz71ldiOA==}
+
+>>>>>>> 810f440 (update projects)
   rollup@3.29.2:
     resolution: {integrity: sha512-CJouHoZ27v6siztc21eEQGo0kIcE5D1gVPA571ez0mMYb25LGYGKnVNXpEj5MGlepmDWGXNjDB5q7uNiPHC11A==}
     engines: {node: '>=14.18.0', npm: '>=8.0.0'}
@@ -304,6 +329,13 @@ snapshots:
 
   '@studio-freight/lenis@1.0.25': {}
 
+<<<<<<< HEAD
+=======
+  effect@3.12.0:
+    dependencies:
+      fast-check: 3.23.2
+
+>>>>>>> 810f440 (update projects)
   esbuild@0.18.20:
     optionalDependencies:
       '@esbuild/android-arm': 0.18.20
@@ -329,6 +361,13 @@ snapshots:
       '@esbuild/win32-ia32': 0.18.20
       '@esbuild/win32-x64': 0.18.20
 
+<<<<<<< HEAD
+=======
+  fast-check@3.23.2:
+    dependencies:
+      pure-rand: 6.1.0
+
+>>>>>>> 810f440 (update projects)
   fsevents@2.3.3:
     optional: true
 
@@ -346,6 +385,11 @@ snapshots:
 
   prettier@3.0.3: {}
 
+<<<<<<< HEAD
+=======
+  pure-rand@6.1.0: {}
+
+>>>>>>> 810f440 (update projects)
   rollup@3.29.2:
     optionalDependencies:
       fsevents: 2.3.3
