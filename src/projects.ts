@@ -12,14 +12,14 @@ const ProjectValue = Schema.Struct({
 type ProjectValue = typeof ProjectValue.Type;
 
 export const projectAList: [string, ProjectValue][] = [
-  ["Medfetch", {
-    description: "A Query-Based clinical-data exchange marketplace built to facilitate clinical research! My biggest project yet, leading development across the entire stack.",
+  ["Medfetch (App)", {
+    description: "A clinical data fetcher app built on top of native SQL! My biggest project yet, leading development across the entire stack.",
     languages: ["Typescript", "SQL", "HTML", "CSS"],
     tools: ["NextJS", "TailwindCSS", "React", "nodejs"],
     image: { src: "medfetch.png" }
   }],
-  ["Tree Query Language", {
-    description: "An SQL-like query language for unnesting FHIR-based tree data into flattened tables. Visually make sense of deeply nested tree-data from FHIR!",
+  ["Medfetch (Library) + sqlite-on-wasm!", {
+    description: "A SQL-on-FHIR implementation that is bundled with the Medfetch SQLite extension, which can be run on both the server or the browser via WebAssembly! All of these tools were written from scratch by yours truly.",
     languages: ["Typescript", "SQL"],
     tools: ["nodejs"],
     image: { src: "tql.png" }
@@ -31,7 +31,7 @@ export const projectAList: [string, ProjectValue][] = [
     image: { src: "escape.png" }
   }],
   ["Personal Digital Spaces revamp", {
-    description: "A full migration of a blockchain-based webapp from create-react-app to NextJS built for Personal Digital Spaces!",
+    description: "A cryptocurrency Testnet Faucet on NextJS",
     languages: ["Typescript", "SQL"],
     tools: ["React", "Vite", "Redis", "NextJS", "nodejs"],
     image: { src: "pds.png" }
