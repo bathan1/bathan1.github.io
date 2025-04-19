@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Cross-Origin-Opener-Policy" content="same-origin">
+    <meta http-equiv="Cross-Origin-Embedder-Policy" content="require-corp">
+    <meta charset="UTF-8" />
+    <title>Medfetch Fiddle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Try Medfetch.js in your browser!</h1>
+
+      <div class="fiddle-container">
+        <div class="input-pane">
+          <textarea id="sql-input" rows="20">
+CREATE TEMP TABLE Patient AS
+SELECT
+  'Patient/' || id AS id,
+  (json -> 'name' -> 0 -> 'given' ->> 0) || ' ' ||
+  (json -> 'name' -> 0 ->> 'family') AS name
+FROM
+  medfetch('Patient');
+
+CREATE TEMP TABLE Encounter AS
+SELECT
+  id AS id,
+  json -> 'subject' ->> 'reference' AS patient_id
+FROM medfetch('Encounter');
+
+CREATE INDEX idx_encounter_patient_id ON Encounter(patient_id);
+
+SELECT DISTINCT
+  Encounter.patient_id,
+  Patient.id,
+  Patient.name
+FROM
+  Encounter
+INNER JOIN
+  Patient ON Encounter.patient_id = Patient.id;
+          </textarea>
+          <button id="run-query">Run Query</button>
+        </div>
+        <div id="output" class="output-pane"></div>
+      </div>
+    </main>
+
+
+    <script type="module" src="/src/fiddle.ts"></script>
+  </body>
+</html>
+

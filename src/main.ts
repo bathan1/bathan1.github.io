@@ -4,7 +4,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const toBlurb = (projectName: string, projectDescription: string) => `<a>${projectName}</a> <br/> ${projectDescription}`;
 
-const reduceLangs = (languages: readonly string[], tools: readonly string[]) => [...languages, ...tools]
+const reduceLangs = (languages: readonly string[]) => [...languages]
   .reduce((acc, language, idx, self) => {
     acc += `<li>${language}</li>`
     if (idx === self.length - 1) {
@@ -35,7 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 768) {
     document.addEventListener('mousemove', trackMouse);
   }
-    const numImages = 6;
     const minimap = document.querySelector(".minimap .preview");
     const imageContainer = document.querySelector(".images");
 
@@ -49,41 +48,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let activeThumbnail: null | HTMLDivElement = null;
   for (const [ projectName, projectInfo ] of projectAList) {
-    const randomLeft = getRandomLeft();
     const imagePath = projectInfo.image.src;
+
+    const thumbnailLink = document.createElement("a");
+    thumbnailLink.target = "_blank";
+    thumbnailLink.rel = "noopener noreferrer";
 
     const thumbnailDiv = document.createElement("div");
     thumbnailDiv.className = "img-thumbnail";
     thumbnailDiv.style.left = getRandomLeft();
+
     const imgThumbnail = document.createElement("img");
     imgThumbnail.src = imagePath;
+
     thumbnailDiv.appendChild(imgThumbnail);
-    minimap!.appendChild(thumbnailDiv);
+    thumbnailLink.appendChild(thumbnailDiv);
+    minimap!.appendChild(thumbnailLink);
+
     
     const imgDiv = document.createElement("div");
-    imgDiv.className = "img";
-    imgDiv.classList.add("appear");
-  
-    const blurbContainer = document.createElement("div");
-    blurbContainer.className = "blurb-container";
+imgDiv.className = "img";
+imgDiv.classList.add("appear");
 
-    const blurb = document.createElement("p");
-    blurb.innerHTML = toBlurb(projectName, projectInfo.description);
+const blurbContainer = document.createElement("div");
+blurbContainer.className = "blurb-container";
 
-    const techDiv = document.createElement("div");
-    techDiv.className = "tech-container";
-    techDiv.innerHTML = reduceLangs(projectInfo.languages, projectInfo.tools);
+const blurb = document.createElement("p");
+blurb.innerHTML = toBlurb(projectName, projectInfo.description);
 
-    const imgFull = document.createElement("img");
-    imgFull.src = imagePath;
+const techDiv = document.createElement("div");
+techDiv.className = "tech-container";
+techDiv.innerHTML = reduceLangs(projectInfo.languages);
 
-    blurbContainer.appendChild(blurb);
-    blurbContainer.appendChild(techDiv);
+const imgFull = document.createElement("img");
+imgFull.src = imagePath;
 
-    imgDiv.appendChild(imgFull);
-    imgDiv.appendChild(blurbContainer);
+blurbContainer.appendChild(blurb);
+blurbContainer.appendChild(techDiv);
 
-    imageContainer!.appendChild(imgDiv);
+imgDiv.appendChild(imgFull);
+imgDiv.appendChild(blurbContainer);
+
+// ⬇️ Make main image clickable
+const imgLink = document.createElement("a");
+imgLink.href = projectInfo.href;
+imgLink.target = "_blank";
+imgLink.rel = "noopener noreferrer";
+imgLink.appendChild(imgDiv);
+
+imageContainer!.appendChild(imgLink);
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({

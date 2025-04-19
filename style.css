@@ -199,7 +199,7 @@ body nav {
 
 #hero-section h1 {
   font-weight: 500;
-  font-size: 2.5rem;
+  font-size: 2.0rem;
 }
 
 @media (min-width: 475px) {
@@ -212,7 +212,7 @@ body nav {
 @media (min-width: 640px) {
   #main-text-container {
     max-width: 100%;
-    padding: 10rem;
+    padding: 6rem;
   }
 }
 
@@ -293,16 +293,17 @@ body nav {
 
 .img {
   position: relative;
+  cursor: pointer;
   border-radius: 20px;
   overflow: hidden;
   margin: 50px auto;
 }
 
-
+/* Responsive image container sizes */
 @media (max-width: 720px) {
   .img {
     width: 52vmin;
-    height: 30vmin; 
+    height: 30vmin;
   }
 }
 
@@ -313,30 +314,35 @@ body nav {
   }
 }
 
+/* Full-size image behavior */
 .img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
 
-  /* Hover blur effect styles */
+  /* Hover blur effect */
   filter: blur(0);
   transform: scale(1);
   transition: filter 0.3s ease-in-out, transform 0.3s ease-in;
 }
 
+/* Blurb reveal container */
 .blurb-container {
   position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 16px;
-  bottom: 0%;
   background: var(--primary);
   display: flex;
-
-  /* Hover animation styles */
   height: 0;
-  width: 100%; /* i have fuckin clue what is going on here with the widths but whatever maybe u can fix it later */
+  overflow: hidden;
   transition: height 0.3s ease-in-out;
+  z-index: 2;
 }
 
+/* On hover: image zoom and blur, blurb appears */
 .img:hover img {
   filter: blur(4px);
   transform: scale(1.1);
@@ -346,20 +352,35 @@ body nav {
   height: 45%;
 }
 
+/* Text inside blurb */
 .blurb-container > p {
   flex: 3;
-
+  margin: 0;
   color: var(--alt-text);
 }
 
+/* Tech list container next to blurb */
 .tech-container {
   flex: 1;
+  margin-left: 1rem;
 }
 
+/* Thumbnail container */
+.img-thumbnail {
+  position: relative;
+  width: 9vmin;
+  height: 12vmin;
+  border-radius: 10px;
+  overflow: hidden;
+  opacity: 0.5;
+}
+
+/* Thumbnail image itself */
 .preview > .img-thumbnail > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .img-thumbnail {
@@ -395,7 +416,8 @@ body nav {
 }
 
 .blurb-container a {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  cursor: pointer;
 }
 
 .about {
@@ -410,4 +432,86 @@ em {
 
 strong {
   font-weight: bold;
+}
+
+#output table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-family: monospace;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  font-size: 0.9rem;
+}
+
+#output th,
+#output td {
+  border: 1px solid #444;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+#output th {
+  background: #2c2c2c;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+#output tr:nth-child(even) {
+  background-color: #2a2a2a;
+}
+
+#output p {
+  color: #ddd;
+  font-family: monospace;
+}
+
+.fiddle-container {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  height: 80vh;
+  margin-top: 1rem;
+}
+
+.input-pane,
+.output-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+#sql-input {
+  flex: 1;
+  resize: none;
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: #111;
+  color: #eee;
+  border: 1px solid #444;
+  padding: 0.5rem;
+}
+
+#run-query {
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #333;
+  color: white;
+  border: 1px solid #555;
+  cursor: pointer;
+}
+
+#run-query:hover {
+  background: #444;
+}
+
+#output {
+  flex: 1;
+  overflow: auto;
+  background: #1e1e1e;
+  color: #e0e0e0;
+  padding: 1rem;
+  border: 1px solid #444;
+  font-family: monospace;
+  font-size: 0.9rem;
 }
