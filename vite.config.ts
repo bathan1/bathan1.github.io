@@ -21,7 +21,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        fiddle: resolve(__dirname, "fiddle.html")
+        fiddle: resolve(__dirname, "fiddle/index.html")
       },
       external: ["@sqlite.org/sqlite-wasm", "medfetch", "fhirpath", "effect"]
     }
