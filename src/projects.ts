@@ -18,7 +18,7 @@ export const projectAList: [string, ProjectValue][] = [
     image: { src: "medfetchjs.png" },
     href: "https://medfetchjs.pages.dev/sql/sqlite"
   }],
-  ["Personal Digital Spaces revamp", {
+  ["Personal Digital Spaces", {
     description: "A cryptocurrency Testnet Faucet on NextJS.",
     languages: ["Javascript", "PostgreSQL", "Redis"],
     image: { src: "pds.png" },

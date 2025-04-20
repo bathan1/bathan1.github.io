@@ -15,7 +15,7 @@ async function setup() {
 async function runQuery() {
   const queryText = input.value;
 
-  output.innerHTML = `<p style="color: #aaa;">Loading... JOINs are slow right now, but this will resolve, I PROMISE</p>`;
+  output.innerHTML = `<p style="color: #aaa;">Loading... JOINs are slow right now, but this will resolve, I promise</p>`;
 
   try {
     const result = await db`${queryText}`.pipe(Effect.runPromise);

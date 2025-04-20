@@ -1,5 +1,5 @@
 import { gsap } from "gsap";
-import { projectAList } from "./projects";
+import { projectAList } from "./projects.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const toBlurb = (projectName: string, projectDescription: string) => `<a>${projectName}</a> <br/> ${projectDescription}`;
@@ -35,13 +35,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (window.innerWidth > 768) {
     document.addEventListener('mousemove', trackMouse);
   }
-    const minimap = document.querySelector(".minimap .preview");
-    const imageContainer = document.querySelector(".images");
+  const minimap = document.querySelector(".minimap .preview");
+  const imageContainer = document.querySelector(".images");
 
-    const getRandomLeft = () => {
-      const values = [-1, -0.5, 0, 0.5, 1];
-      return values[Math.floor(Math.random() * values.length)].toString() + "rem";
-    }
+  const getRandomLeft = () => {
+    const values = [-1, -0.5, 0, 0.5, 1];
+    return values[Math.floor(Math.random() * values.length)].toString() + "rem";
+  }
 
   minimap.innerHTML = "";
   imageContainer.innerHTML = "";
@@ -65,38 +65,37 @@ document.addEventListener("DOMContentLoaded", () => {
     thumbnailLink.appendChild(thumbnailDiv);
     minimap!.appendChild(thumbnailLink);
 
-    
+
     const imgDiv = document.createElement("div");
-imgDiv.className = "img";
-imgDiv.classList.add("appear");
+    imgDiv.className = "img";
+    imgDiv.classList.add("appear");
 
-const blurbContainer = document.createElement("div");
-blurbContainer.className = "blurb-container";
+    const blurbContainer = document.createElement("div");
+    blurbContainer.className = "blurb-container";
 
-const blurb = document.createElement("p");
-blurb.innerHTML = toBlurb(projectName, projectInfo.description);
+    const blurb = document.createElement("p");
+    blurb.innerHTML = toBlurb(projectName, projectInfo.description);
 
-const techDiv = document.createElement("div");
-techDiv.className = "tech-container";
-techDiv.innerHTML = reduceLangs(projectInfo.languages);
+    const techDiv = document.createElement("div");
+    techDiv.className = "tech-container";
+    techDiv.innerHTML = reduceLangs(projectInfo.languages);
 
-const imgFull = document.createElement("img");
-imgFull.src = imagePath;
+    const imgFull = document.createElement("img");
+    imgFull.src = imagePath;
 
-blurbContainer.appendChild(blurb);
-blurbContainer.appendChild(techDiv);
+    blurbContainer.appendChild(blurb);
+    blurbContainer.appendChild(techDiv);
 
-imgDiv.appendChild(imgFull);
-imgDiv.appendChild(blurbContainer);
 
-// ⬇️ Make main image clickable
-const imgLink = document.createElement("a");
-imgLink.href = projectInfo.href;
-imgLink.target = "_blank";
-imgLink.rel = "noopener noreferrer";
-imgLink.appendChild(imgDiv);
+    imgDiv.appendChild(imgFull);
+    imgDiv.appendChild(blurbContainer);
 
-imageContainer!.appendChild(imgLink);
+    const imgLink = document.createElement("a");
+    imgLink.href = projectInfo.href;
+    imgLink.target = "_blank";
+    imgLink.appendChild(imgDiv);
+
+    imageContainer!.appendChild(imgLink);
 
     gsap.registerPlugin(ScrollTrigger);
     ScrollTrigger.create({
@@ -111,7 +110,7 @@ imageContainer!.appendChild(imgLink);
           animateThumbnail(thumbnailDiv, true);
           activeThumbnail = thumbnailDiv;
         } else if (activeThumbnail === thumbnailDiv) {
-            animateThumbnail(thumbnailDiv, false);
+          animateThumbnail(thumbnailDiv, false);
         }
       }
     });
@@ -138,19 +137,5 @@ imageContainer!.appendChild(imgLink);
 
   const io = new IntersectionObserver(cb);
   appearElements.forEach(e => io.observe(e));
-
-  
-  const handleContactSpanClick = () => {
-    document.execCommand("copy");
-  }
-
-  const contactSpan = document.getElementById("contact-anchor");
-  contactSpan.onclick = handleContactSpanClick;
-  contactSpan.addEventListener("copy", (e) => {
-    e.preventDefault();  
-    if (e.clipboardData) {
-      e.clipboardData.setData("text/plain", contactSpan.textContent);
-    }
-  });
 });
 
