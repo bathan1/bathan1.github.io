@@ -22,7 +22,8 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         fiddle: resolve(__dirname, "fiddle.html")
-      }
+      },
+      external: ["medfetch", "@sqlite.org/sqlite-wasm"]
     }
   }
 });
