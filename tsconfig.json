@@ -5,6 +5,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
+    "module": "nodenext",
     "moduleResolution": "nodenext",
     "target": "ES2021",
     "sourceMap": true,

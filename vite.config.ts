@@ -1,4 +1,8 @@
-import { defineConfig } from "vite";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from 'node:url'
+import { defineConfig } from 'vite'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default defineConfig({
   server: {
@@ -12,5 +16,13 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ["medfetch"]
+  },
+  build: {
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "index.html"),
+        fiddle: resolve(__dirname, "fiddle.html")
+      }
+    }
   }
 });
