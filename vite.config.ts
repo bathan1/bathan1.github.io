@@ -15,7 +15,7 @@ export default defineConfig({
     format: "es"
   },
   optimizeDeps: {
-    exclude: ["medfetch"]
+    exclude: ["medfetch", "@sqlite.org/sqlite-wasm"]
   },
   build: {
     rollupOptions: {
