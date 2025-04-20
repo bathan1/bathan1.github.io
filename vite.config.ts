@@ -15,7 +15,7 @@ export default defineConfig({
     format: "es"
   },
   optimizeDeps: {
-    exclude: ["medfetch", "@sqlite.org/sqlite-wasm"]
+    exclude: ["medfetch", "@sqlite.org/sqlite-wasm", "fhirpath", "effect"]
   },
   build: {
     rollupOptions: {
@@ -23,7 +23,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
         fiddle: resolve(__dirname, "fiddle.html")
       },
-      external: ["medfetch", "@sqlite.org/sqlite-wasm"]
+      external: ["medfetch", "@sqlite.org/sqlite-wasm", "fhirpath", "effect"]
     }
   }
 });
